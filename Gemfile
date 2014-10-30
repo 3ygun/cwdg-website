@@ -7,9 +7,10 @@ gem 'bourbon', '~> 4.0.2'
 
 gem 'coffee-rails', '~> 4.1.0'
 
-gem 'geo_pattern', '~> 1.2.1'
-gem 'github-markdown', '~> 0.6.7'
-gem "github-linguist",  "~> 2.10"
+gem 'geo_pattern',       '~> 1.2.1'
+gem 'github-markdown',   '~> 0.6.7'
+gem 'github-linguist',   '~> 2.10'
+gem 'google-api-client', '~> 0.7.1'
 
 gem 'html-pipeline', '~> 1.11.0'
 
@@ -28,11 +29,11 @@ gem 'rufus-scheduler', '~> 3.0.9'
 gem 'redcarpet', '~> 3.2.0'
 
 gem 'sass-rails', '~> 5.0.0.beta1'
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc',       '~> 0.4.0', group: :doc
 
 gem 'turbolinks', '~> 2.4.0'
 
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier',       '>= 1.3.0'
 gem 'unicorn',        '~> 4.8.3'
 
 group :development, :test do
