@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   before_save { self.name = self.username if self.name.blank? }
+  has_many :pizza_votes
 
   validates :gravatar_url, :provider, :uid, :username, presence: true
 
