@@ -291,3 +291,8 @@ p {
     @include transform (rotate(0));
   }
 }
+
+#poll {
+  // Yeah, I'll probably regret this
+  text-align: center;
+}
