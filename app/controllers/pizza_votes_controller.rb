@@ -1,0 +1,2 @@
+class PizzaVotesController < ApplicationController
+end

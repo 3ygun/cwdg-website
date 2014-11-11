@@ -1,0 +1,2 @@
+module PizzaVotesHelper
+end
