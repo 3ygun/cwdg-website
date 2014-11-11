@@ -1,0 +1,13 @@
+<%= render 'pages/header' %>
+
+<section id="poll">
+  <% if not current_user %>
+    <h3>You must be signed in to vote</h3>
+  <% else %>
+    <form>
+      <h3 class="lead-in-text">I'd like to eat...</h3>
+      <input type="text" name="flavor" />
+      <input type="Submit" value="Vote!" />
+    </form>
+  <% end %>
+</section>

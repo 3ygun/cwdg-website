@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/about' => 'pages#about'
 
+  get '/pizza' => 'pizza_votes#index'
+
   get '/auth/failure'            => 'sessions#failure'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/login'                   => 'sessions#new',     as: :login
