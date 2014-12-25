@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+if [ ! -f config/database.yml ]
+then
+  printf "Copying config/database-example.yml -> config/database.yml\n"
+  printf "You may need to configure this...\n"
+  cp config/database-example.yml config/database.yml
+fi
+
+if [ ! -f config/secrets.yml ]
+then
+  printf "Copying config/secrets-example.yml -> config/secrets.yml\n"
+  printf "You need to configure this...\n"
+  cp config/secrets-example.yml config/secrets.yml
+fi
+
+bundle install
+bundle exec rake db:migrate
+
+echo 'good to go'

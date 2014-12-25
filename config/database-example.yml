@@ -1,18 +1,13 @@
-postgresql: &postgresql
-adapter: postgresql
-encoding: unicode
-min_messages: ERROR
-
-defaults: &defaults
-  host: localhost
-  timeout: 5000
+defaults: &default
+  adapter: postgresql
+  encoding: unicode
   pool: 5
-  <<: *<%= ENV['DB'] || "postgresql" %>
 
 development:
-  <<: *defaults
+  <<: *default
   database: cwdg_development
 
 test:
-  <<: *defaults
+  <<: *default
   database: cwdg_test
+

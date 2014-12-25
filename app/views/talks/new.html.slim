@@ -1,7 +1,0 @@
-h1 New Talk
-
-= simple_form_for @talk, url: user_talks_path(current_user), method: :post do |f|
-  = f.input :title
-  = f.input :content
-  = f.input :is_lightning_talk
-  = f.submit 'Create'

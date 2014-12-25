@@ -1,0 +1,293 @@
+body {
+  font-family: $regular_text, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  color: #333;
+}
+
+a {
+  font-family: $bold_text;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: normal;
+}
+
+h2 {
+  color: white;
+  font-family: $bold_text;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+header {
+  @include fill-parent;
+  background: image-url('header.jpg') no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  max-height: 350px;
+  overflow: auto;
+  padding-bottom: 8%;
+  margin-bottom: 20px;
+
+  h1 {
+    color: white;
+    font-size: 40px;
+  }
+}
+
+header#tutorials-header {
+  padding-bottom: 0px;
+}
+
+footer {
+  text-align: center;
+
+  a {
+    color: $link;
+  }
+
+  p {
+    color: $dark_text;
+  }
+}
+
+section {
+  @include fill-parent();
+  padding-top: 30px;
+
+  a {
+    color: #A76262;
+  }
+
+  &.dark {
+    background-color: $dark_text;
+    color: white;
+  }
+}
+
+p {
+  line-height: 1.2;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+#meeting-and-navigation {
+  padding-top: 0px;
+  padding-bottom: 15px;
+}
+
+.about-mobile {
+  display: none;
+}
+
+.catch-phrase {
+  @include animation(drop 2s 1);
+}
+
+.container {
+  @include outer-container;
+}
+
+#getting-started {
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+
+  a {
+    color: white;
+  }
+
+  p:last-child {
+    padding-top: 20px;
+    margin-bottom: 0px;
+  }
+}
+
+.info-column {
+  @include span-columns(4);
+  @include omega(3n);
+
+  .mega-octicon {
+    margin-left: 45%;
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.introduction {
+  @include span-columns(8);
+  @include shift(2);
+  text-align: center;
+
+  h1 {
+    margin-top: 0px;
+  }
+}
+
+.logo-container {
+  @include span-columns(9);
+
+  h1 {
+    margin: 0;
+  }
+
+  .logo {
+    font-size: 30px;
+    font-family: $black_text;
+
+    span {
+      font-family: $bold_text;
+      position: relative;
+      font-size: 20px;
+      top: -3px;
+    }
+  }
+
+}
+
+.meeting-date {
+  font-family: $bold_text;
+}
+
+.nav {
+  font-family: $bold_text;
+  padding-bottom: 40px;
+  text-align: center;
+  border-bottom: 2px solid #eee2e2;
+  font-size: 18px;
+
+  .mega-octicon {
+    font-size: 18px;
+  }
+
+  .nav-item {
+    @include span-columns(4);
+    @include omega(3n);
+
+    a {
+      @include transition(all .4s);
+      color: $dark_text;
+      opacity: .4;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+#next-meeting {
+  font-size: 40px;
+}
+
+.presentation {
+  font-size: 20px;
+  margin-bottom: 15px;
+
+  .mega-octicon {
+    font-size: 20px;
+    margin-right: 18px;
+  }
+}
+
+.tutorial {
+  a {
+    font-family: $regular_text, sans-serif;
+    color: $link;
+  }
+
+  h1, h2 {
+    border-bottom: 1px solid rgba($dark_text, 0.1);
+    padding-bottom: 5px;
+  }
+
+  h2, p {
+    color: $dark_text;
+  }
+
+  h3 {
+   font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  ol, ul {
+    font-size: 16px;
+  }
+
+  pre {
+    background-color: rgba(247, 247, 247, 1);
+    border-radius: 3px;
+    padding: 16px;
+  }
+}
+
+.tutorials {
+  list-style: none;
+  font-size: 35px;
+
+  a {
+    color: $dark_text;
+  }
+
+  li {
+    padding-bottom: 10px;
+
+    .tutorial-title {
+      float: left;
+    }
+
+    .last-updated {
+      padding-top: 8px;
+      font-size: 20px;
+      float: right;
+    }
+  }
+
+  .mega-octicon {
+    margin-right: 15px;
+  }
+}
+
+.user-auth-container {
+  @include span-columns(3);
+  padding-top: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  a {
+    float: right;
+  }
+
+  &:hover > a > .mega-octicon {
+    @include transform (rotate(360deg));
+  }
+}
+
+.user-auth-navbar {
+  @include fill-parent;
+  color: white;
+  background: rgba(white, .1);
+  border-bottom: 4px solid rgba(white, .14);
+  padding: 8px 0 12px;
+  margin-bottom: 56px;
+
+  a {
+    color: white;
+  }
+
+  .octicon-mark-github {
+    font-size: 23px;
+    margin-left: 4px;
+    @include transition (all .4s ease-in-out);
+    @include transform (rotate(0));
+  }
+}

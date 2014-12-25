@@ -1,7 +1,0 @@
-h1 Edit #{@talk.title}
-
-= simple_form_for @talk, url: user_talk_path(current_user, @talk), method: :put do |f|
-  = f.input :title
-  = f.input :content
-  = f.input :is_lightning_talk
-  = f.submit 'Update'

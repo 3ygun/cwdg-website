@@ -1,70 +1,64 @@
-#&lt;CWDG /&gt; Website
+# &lt;CWDG /&gt; Website
 
 [![Build Status](https://travis-ci.org/CWDG/cwdg-website.svg)](https://travis-ci.org/CWDG/cwdg-website)
 
-##Description
+## Description
 
 This is our latest web application for our group in
 order for us to manage our group better an automate
 certain tasks that I am terrible at doing.
-But yet still can't answer emails for me.
+But yet still can't answer [emails for me](mailto:cwdgosu@gmail.com).
 
-##Development
+### Before you run this application
 
-###Technologies Used:
+* Install [Virtualbox](https://www.virtualbox.org/)
+* Install [Vagrant](https://www.vagrantup.com/downloads.html)
+* Setup Vagrant
+    - `vagrant plugin install vagrant-vbguest`
 
-* Framework
-  * [Ruby on Rails](http://rubyonrails.org/) w/ [Ruby 2.1.1](http://ruby-lang.org)
-* Authentication
-  * [Omniauth](https://github.com/intridea/omniauth)
-  * [Omniauth-GitHub](https://github.com/intridea/omniauth-github)
-* Templating Languages
-  * [SLIM](http://slim-lang.com)
-  * [SASS](http://sass-lang.com/)
+### Once you have the application cloned
 
-###Run this application
+* Clone it
+    - `git clone https://github.com/CWDG/cwdg-website.git`
+    - `cd cwdg-website`
+* Fire up vagrant
+    - `vagrant up`
+* SSH into the virtual machine
+    - `vagrant ssh`
+* Setup the CWDG app
+    - `cd cwdg-website`
+    - `./script/bootstrap`
 
-This application runs Postgresql both locally and on Heroku.
-Please have this setup before you continue on.
+Please go to [https://github.com/settings/applications/new](https://github.com/settings/applications/new)
+and setup your application like this.
 
-I also have `config/database.yml` gitignored since everyone's machine is different.
-Make sure you add this to your project before running!
+![GitHub Application Setup](http://f.cl.ly/items/1O1x100I2q1m1t3N4641/Screen%20Shot%202014-10-27%20at%203.09.04%20PM.png)
 
-`cp config/database-example.yml config/database.yml`
+Then copy the `Client ID` and the `Client Secret` and paste them into `config/secrets.yml` next to `github_client_id` and `github_client_secret` respectively.
+![config/secrets.yml](http://cl.ly/image/2u0j0V1w3K2M/Screen%20Shot%202014-10-27%20at%203.46.00%20PM.png)
 
-Once you have that installed you can run:
+After that you are good to go!
 
-    bundle install
-
-    rake db:create
-    rake db:migrate
-
-    rails server
-
-The app runs on port 3000, we use [dotenv](http://github.com/bkeepers/dotenv), please contact [@tarebyte](http://github.com/tarebyte)
-to get this. We have two different Oauth keys, one for production and one for development.
-
-###Boxen Configuration
-
-I'm probably the only person that uses [Boxen](http://boxen.github.com),
-but if you do use it, this is the configuration file I use.
-
-```puppet
-# module/projects/manifests/cwdg.pp
-
-class projects::cwdg {
-
-  boxen::project { "cwdg-website":
-    ruby       => '2.1.1',
-    postgresql => true,
-    nginx      => true,
-    source     => "CWDG/cwdg-website",
-    dir        => "${boxen::config::srcdir}/CWDG/cwdg-website"
-  }
-}
+# Run the app
+Make sure that you are sshed into your vagrant machine.
+<br>
 ```
+vagrant ssh
 
-##Contributing
+cd cwdg-website
+
+# Run the server
+bundle exec rails server
+
+# Run the tests
+bundle exec rake test
+```
+<br>
+Go to [http://localhost:3000](http://localhost:3000)
+
+BOOM!! Done.
+
+## Contributing
 
 This is meant to be an application that our group should enjoy and contribute to.
 Please feel free to fork this project and make changes that you would like to see.

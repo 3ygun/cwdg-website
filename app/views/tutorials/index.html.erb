@@ -1,0 +1,26 @@
+<%= content_tag :header, id: 'tutorials-header', style: "background: #{geo_pattern_image('Tutorials', {color: '#7A3332'})}" do %>
+  <%= render 'layouts/user_auth_navbar' -%>
+  <div class="container">
+    <div class="introduction">
+      <h1>Tutorials</h1>
+    </div>
+  </div>
+<% end %>
+
+<div class="container">
+  <ul class="tutorials">
+    <% @tutorials.each do |tutorial| %>
+      <li>
+        <span class="tutorial-title">
+          <%= link_to "https://github.com/CWDG/tutorials/edit/master/#{tutorial.file_name}", method: 'post' do %>
+            <%= mega_octicon('pencil') %>
+          <% end %>
+          <%= link_to tutorial.title, tutorial_path(tutorial) %>
+        </span>
+        <span class="last-updated">
+          Last Synced: <%= time_ago_in_words(tutorial.updated_at) %> ago
+        </span>
+      </li>
+    <% end %>
+  </ul>
+</div>

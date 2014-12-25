@@ -1,17 +1,19 @@
 class User < ActiveRecord::Base
-  extend FriendlyId
-  friendly_id :username, use: :slugged
+  before_save { self.name = self.username if self.name.blank? }
 
-  has_many :presentations, foreign_key: :speaker_id
-  has_many :talks,         foreign_key: :creator_id
+  validates :gravatar_url, :provider, :uid, :username, presence: true
 
-  def self.create_from_omniauth(auth)
+  def self.create_with_omniauth(auth)
     create! do |user|
-      user.username = auth["info"]["nickname"]
-      user.name     = auth["info"]["name"] ? auth["info"]["name"] : user.username
-      user.provider = auth["provider"]
-      user.uid      = auth["uid"]
-      user.slug     = auth["username"]
+      user.gravatar_url  = auth['info']['image']
+      user.name          = auth['info']['name']
+      user.provider      = auth['provider']
+      user.uid           = auth['uid']
+      user.username      = auth['info']['nickname']
     end
+  end
+
+  def gravatar_url_of_size(size)
+    "#{self.gravatar_url}&s=#{size}"
   end
 end

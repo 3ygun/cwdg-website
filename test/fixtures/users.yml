@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+mark_tareshawty:
+  provider: github
+  uid: 12345
+  name: Mark Tareshawty
+  username: tarebyte
+  gravatar_url: https://avatars.githubusercontent.com/u/564113?v=2

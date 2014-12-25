@@ -1,15 +1,21 @@
 class SessionsController < ApplicationController
+  def new
+    redirect_to '/auth/github'
+  end
 
-  # TODO: Redirect to back from whatever page they were at
   def create
-    auth = request.env["omniauth.auth"]
-    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_from_omniauth(auth)
+    auth = request.env['omniauth.auth']
+    user = User.find_by_provider_and_uid(auth['provider'], auth['uid']) || User.create_with_omniauth(auth)
     session[:user_id] = user.id
-    redirect_to root_url, notice: "Signed In!"
+    redirect_to user_path(user)
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: "Sign out"
+    redirect_to root_url
+  end
+
+  def failure
+    redirect_to root_url, alert: "Authentication error: #{params[:message].humanize}"
   end
 end

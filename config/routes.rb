@@ -1,16 +1,14 @@
-CwdgRails::Application.routes.draw do
-
+Rails.application.routes.draw do
+  resources :tutorials, only: [:index, :show]
+  resources :users, only: [:show]
   resources :projects
 
-  resources :users, only: [:show, :edit, :update] do
-    resources :talks, except: [:index, :show]
-  end
+  root 'pages#home'
 
-  root 'static_pages#home'
+  get '/about' => 'pages#about'
 
-  match 'members',                 to: 'users#index',                    via: :get
-
-  match 'auth/:provider/callback', to: 'sessions#create',                via: :get
-  match 'auth/failure',            to: redirect('/'),                    via: :get
-  match 'signout',                 to: 'sessions#destroy',               via: :get
+  get '/auth/failure'            => 'sessions#failure'
+  get '/auth/:provider/callback' => 'sessions#create'
+  get '/login'                   => 'sessions#new',     as: :login
+  get '/logout'                  => 'sessions#destroy', as: :logout
 end

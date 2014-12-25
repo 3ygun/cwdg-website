@@ -1,0 +1,23 @@
+<div class="user-auth-navbar">
+  <div class="container">
+    <div class="logo-container">
+      <%= link_to root_path do %>
+        <h1 class="logo">< \ /\ / > <span>COLLEGIATE WEB DEVELOPERS</span></h1>
+      <% end %>
+    </div>
+    <div class="user-auth-container">
+      <% if user_signed_in? %>
+        <%= link_to user_path(current_user) do %>
+          <span><%= current_user.name %></span>
+          <%= mega_octicon('mark-github') %>
+        <% end %>
+      <% else %>
+        <%= link_to login_path do %>
+          <span>Sign in with GitHub</span>
+          <%= mega_octicon('mark-github') %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
