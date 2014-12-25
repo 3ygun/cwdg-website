@@ -1,83 +1,12 @@
-<header class="small">
-  <div class="login_bar">
-    <div class="container">
-      <a href="/">
-        <h1 class="logo">< \ /\ / > <span>COLLEGIATE WEB DEVELOPERS</span></h1>
-      </a><div class="login">
-      <a href="/auth/github">SIGN IN WITH GITHUB
-        <img alt="Octocat" class="octocat" data-at2x="/assets/octocat@2x.png" src="/assets/octocat.png" />
-      </a>
-    </div>
-    </div>
-  </div>
-  <div class="container title">
-    <h1 class="phrase">Club Projects</h1>
-    <div class="subheader">Here are some of the things that we're working on. Click on one and have a look around.</div>
-  </div>
-</header>
+<%= render 'header' %>
 <section class="projectViewer">
-  <div class="triggerL">
-    <img class="arrowLeft" src="/assets/arrowLeft.jpg" />
-  </div>
-  <div align="center" style="display: inline-block;">
-    <div class="scroll">
-    <div class="sample" id='project1'>
-      <div class="projectLabel">Google</div>
-      <img class="preview" src="/assets/google.png" />
-    </div>
-    <div class="sample" id='project2'>
-      <div class="projectLabel">Tesla Motors</div>
-      <img class="preview" src="/assets/teslaScreen.png" />
-    </div>
-    <div class="sample" id='project3'>
-      <div class="projectLabel">Facebook</div>
-      <img class="preview" src="/assets/facebookScreen.png" />
-    </div>
-    <div class="sample" id='project4'>
-      <div class="projectLabel">Dropbox</div>
-      <img class="preview" src="/assets/dropboxScreen.png" />
-    </div>
-    </div>
-  </div>
-  <div class="triggerR">
-    <img class="arrowRight" src="/assets/arrowRight.jpg" />
+  <div class="container title">
+    <h1 class="phrase">Current Projects</h1>
+    <div class="subheader">Here are some of the things that we're working on. Click on one and have a look around.</div>
+    <% @projects.each do |project| %>
+      <%= link_to project.title, project %><br />
+    <% end %>
+    <br />
+    <%= link_to "New Project", new_project_path %>
   </div>
 </section>
-<section class="about" style="height: 325px">
-  <div class="detailsContainer">
-  <div class="projectDetails">
-    <p id='project1' align="center">Google</p>
-    <p id='project2' align="center">Tesla Motors</p>
-    <p id='project3' align="center">Facebook</p>
-    <p id='project4' align="center">Dropbox</p>
-  </div>
-  <div class="prDetailsLabel" style="float: left;">
-    <h2>About: </h2>
-    <p id="project1">Google’s mission is to organize the world’s information and make it universally accessible and useful. We also do lots of other crazy stuff... Oh, and by the way, we know everything about you.</p>
-    <p id='project2'>TESLA MOTORS was founded in 2003 by a group of Silicon Valley engineers who set out to prove that electric vehicles could be awesome.</p>
-    <p id='project3'>Founded in 2004, Facebook’s mission is to give people the power to share and make the world more open and connected. People use Facebook to stay connected with friends and family, to discover what’s going on in the world, and to share and express what matters to them. We also conduct experiments on people without their knowledge. lolz</p>
-    <p id='project4'>We store stuff in the cloud for you. It's pretty convenient, but we're not so good about protecting your privacy. Just sayin'.</p>
-  </div>
-  <div class="prDetailsLabel" style="float: left;">
-    <h2>Group Members: </h2>
-    <p id="project1">Eric Schmidt, Larry Page, Sergy Brin</p>
-    <p id='project2'>Elon Musk, Steven Hawking, Barack Obama</p>
-    <p id='project3'>Mark Zuckerberg, Sheryl Sandberg, Mike Vernal</p>
-    <p id='project4'>Drew Houston, Arash Ferdowsi, Condoleezza Rice</p>
-  </div>
-  <div align="center">
-    <p id="project1" align="center">URL: <a class='prLink' href="http://www.google.com">http://www.google.com</a></p>
-    <p id='project2' align="center">URL: <a class='prLink' href="http://www.teslamotors.com">http://www.teslamotors.com</a></p>
-    <p id='project3' align="center">URL: <a class='prLink' href="http://www.facebook.com">http://www.facebook.com</a></p>
-    <p id='project4' align="center">URL: <a class='prLink' href="http://www.dropbox.com">http://www.dropbox.com</a></p>
-  </div>
-  </div>
-</section>
-<footer>
-  <div class="container">
-    <img alt="Neo sponsorship" data-at2x="/assets/neo-sponsorship@2x.png" src="/assets/neo-sponsorship.png" />
-  </div>
-  <div class="container">
-    <p>Email <a href="mailto:cwdgosu@gmail.com">cwdgosu@gmail.com</a> for more information.</p>
-  </div>
-</footer>
