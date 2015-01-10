@@ -1,12 +1,12 @@
 <%= render 'header' %>
 <section class="projectViewer">
-  <div class="container title">
-    <h1 class="phrase">Current Projects</h1>
-    <div class="subheader">Here are some of the things that we're working on. Click on one and have a look around.</div>
+  <div class="container">
+    <h1 class="phrase"><%= mega_octicon('rocket') %> Current Projects</h1>
     <% @projects.each do |project| %>
-      <%= link_to project.title, project %><br />
+      <%= link_to project.title, project, class: "project-link" %><br />
+      <p class="description"><%= short_description(project.description) %></p>
     <% end %>
     <br />
-    <%= link_to "Submit new project", new_project_path %>
+    <%= link_to "Submit new project", new_project_path, class: "small-button"%>
   </div>
 </section>
