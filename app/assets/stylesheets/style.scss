@@ -291,3 +291,9 @@ p {
     @include transform (rotate(0));
   }
 }
+
+.show-project {
+  h2, p {
+    color: #333;
+  }
+}
