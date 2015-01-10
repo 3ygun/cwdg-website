@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :managed_projects, foreign_key: 'leader_id', class_name: 'Project'
+  has_and_belongs_to_many :projects
+
   before_save { self.name = self.username if self.name.blank? }
 
   validates :gravatar_url, :provider, :uid, :username, presence: true
