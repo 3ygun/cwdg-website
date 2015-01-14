@@ -1,8 +1,15 @@
 <%= render 'header' %>
 <section class="show-project">
   <div class="container">
+    <%= link_to projects_path do %>
+      <%= octicon('arrow-left') %> Projects
+    <% end %>
+
+
     <h1><%= @project.title %></h1>
-    <h2>Project Leader: <%= @project.leader.name %>
+    <h2>Project Leader: <%= @project.leader.name %></h2>
     <p><%= @project.description %></p>
+
+    <%= link_to "Edit", edit_project_path(@project) %>
   </div>
 </section>
