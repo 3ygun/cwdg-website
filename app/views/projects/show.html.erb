@@ -5,9 +5,14 @@
       <%= octicon('arrow-left') %> Projects
     <% end %>
 
-
     <h1><%= @project.title %></h1>
     <h2>Project Leader: <%= @project.leader.name %></h2>
+    <h2>Team:</h2>
+    <ul>
+      <% @project.users.each do |user| %>
+        <li><%= user %></li>
+      <% end %>
+    </ul>
     <p><%= @project.description %></p>
 
     <%= link_to "Edit", edit_project_path(@project) %>
