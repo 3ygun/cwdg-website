@@ -275,6 +275,22 @@ p {
   }
 }
 
+.sponsor-container{
+  @include fill-parent;
+  @include outer-container;
+  .sponsor-row {
+    @include span-columns(12);
+    .sponsor-list {
+      @include span-columns(6);
+      @include shift(3);
+      li.block {
+        @include span-columns(3 of 6);
+        @include omega(2n);
+      }
+    }
+  }
+}
+
 .user-auth-navbar {
   @include fill-parent;
   color: white;

@@ -1,8 +1,20 @@
 <footer>
-  <div class="container">
-    <h3>Meetings Sponsored By:</h3>
-    <a href="http://neo.com" alt="Neo Innovations"><%= image_tag 'neo-logo-new.svg', id: 'neo-logo', class: 'logo' %></a>
-    <a href="http://covermymeds.com" alt="CoverMyMeds"><%= image_tag 'CMM_Logo_800.png', id: 'cmm-logo', class: 'logo' %></a>
-    <p>Email <%= mail_to 'cwdgosu@gmail.com' %> for more information</p>
+  <div class="sponsor-container">
+    <div class="sponsor-row">
+      <h3>Meetings Sponsored By:</h3>
+    </div>
+    <div class='sponsor-row'>
+      <div class="sponsor-list">
+        <li class="block">
+          <a href="http://neo.com" alt="Neo Innovations"><%= image_tag 'neo-logo-new.svg', id: 'neo-logo', class: 'logo' %></a>
+        </li>
+        <li class="block">
+          <a href="http://covermymeds.com" alt="CoverMyMeds"><%= image_tag 'CMM_Logo_800.png', id: 'cmm-logo', class: 'logo' %></a>
+        </li>
+      </div>
+    </div>
+    <div class="sponsor-row">
+      <p>Email <%= mail_to 'cwdgosu@gmail.com' %> for more information</p>
+    </div>
   </div>
 </footer>
