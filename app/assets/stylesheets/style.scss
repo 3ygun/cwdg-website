@@ -105,11 +105,17 @@ p {
     padding-top: 20px;
     margin-bottom: 0px;
   }
+
+  p {
+    text-align: justify;
+  }
 }
 
 .info-column {
   @include span-columns(4);
   @include omega(3n);
+
+  text-align: justify;
 
   .mega-octicon {
     margin-left: 45%;
