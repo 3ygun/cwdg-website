@@ -319,3 +319,32 @@ p {
 .logo {
   height: 30px;
 }
+
+.about {
+  padding-bottom: 20px;
+
+  h2 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p, h2 {
+    color: $dark-text;
+  }
+
+  li {
+    font-size: 20px;
+  }
+
+  .showcase-column {
+    @include span-columns(6);
+    @include omega(2n);
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
