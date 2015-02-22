@@ -1,18 +1,27 @@
 language: ruby
 rvm:
-  - 2.2.0
+- 2.2.0
 env:
-  - DB=postgresql
+- DB=postgresql
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake test
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake test
 before_install:
-  - sudo apt-get install libicu-dev -y
-  - gem install charlock_holmes -v="0.7.3"
+- sudo apt-get install libicu-dev -y
+- gem install charlock_holmes -v="0.7.3"
 before_script:
-  - cp config/database.travis.yml config/database.yml
-  - cp config/secrets-example.yml config/secrets.yml
-  - psql -c 'create database cwdg_test;' -U postgres
+- cp config/database.travis.yml config/database.yml
+- cp config/secrets-example.yml config/secrets.yml
+- psql -c 'create database cwdg_test;' -U postgres
 notifications:
   email:
-    - cwdgosu@gmail.com
+  - cwdgosu@gmail.com
+  slack:
+    secure: s40BSx9nWnF2HOsFGNeRthmacN0U/s9xQOJYUjUIoVrYG50/0KZFPGzYYaXtwbEAE2nn9omTO6WT+tXk4C62kUuHjpxckhpeAMptj4lcCgqrnVHczuA1vBvkQnt3hioWg0YgpFs5lF47S7aArZSaOJ0YgnYbnRfp9slihEyUPpQ=
+deploy:
+  provider: heroku
+  api_key:
+    secure: Zec32VQQdOkZAGNfM+5IVBAkmULZvEmorvalpHIL6JfDXc3RVQe6XHzNxbR2jykEJ23ZdjgsT3aXvCmL0BV7SrvYM8VLM4f5V52AP/eouGOri84jhh5UuPeZh+JcdavKoDI+GVgyKjy0iZCxAMN2Fx51WURPhyVKNZuaaDgS/ng=
+  app: cwdg
+  on:
+    repo: CWDG/cwdg-website
