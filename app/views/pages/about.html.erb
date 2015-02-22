@@ -1,4 +1,11 @@
-<%= render 'pages/header' %>
+<%= content_tag :header, id: 'about-header', style: "background: #{geo_pattern_image('about us', {color: '#7A3332'})}" do %>
+  <%= render 'layouts/user_auth_navbar' %>
+  <div class="container">
+    <div class="introduction">
+      <h1>About Us</h1>
+    </div>
+  </div>
+<% end %>
 
 <section>
   <div class="container">
