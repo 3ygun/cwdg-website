@@ -29,7 +29,7 @@ header {
   background-size: cover;
   background-position: 50% 50%;
   max-height: 350px;
-  padding-bottom: 8%;
+  padding-bottom: 50px;
   margin-bottom: 20px;
 
   h1 {
@@ -38,8 +38,8 @@ header {
   }
 }
 
-header#tutorials-header {
-  padding-bottom: 0px;
+header#main-header {
+  padding-bottom: 8%;
 }
 
 footer {
