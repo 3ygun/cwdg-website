@@ -29,7 +29,6 @@ header {
   background-size: cover;
   background-position: 50% 50%;
   max-height: 350px;
-  overflow: auto;
   padding-bottom: 8%;
   margin-bottom: 20px;
 
@@ -194,6 +193,10 @@ p {
     font-size: 20px;
     margin-right: 18px;
   }
+
+  span {
+    margin-bottom: 20px;
+  }
 }
 
 .tutorial {
@@ -272,6 +275,27 @@ p {
   }
 }
 
+.sponsor-container{
+  @include fill-parent;
+  @include outer-container;
+  .sponsor-row {
+    @include span-columns(12);
+    .sponsor-list {
+      @include span-columns(6);
+      @include shift(3);
+      li {
+        list-style-type: none;
+        @include span-columns(3 of 6);
+        @include omega(2n);
+        @include media($mobile) {
+          @include span-columns(6 of 6);
+          @include omega(1n);
+        }
+      }
+    }
+  }
+}
+
 .user-auth-navbar {
   @include fill-parent;
   color: white;
@@ -310,4 +334,7 @@ p {
   h2, p {
     color: #333;
   }
+
+.logo {
+  height: 30px;
 }
