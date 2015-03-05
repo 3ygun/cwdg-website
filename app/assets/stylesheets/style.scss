@@ -348,3 +348,17 @@ p {
     }
   }
 }
+
+.officers .officer-panel {
+  width: 20%;
+  float: left;
+  padding: 5px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.clearfix {
+  clear: both;
+}
