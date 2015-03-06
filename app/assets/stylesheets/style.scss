@@ -320,8 +320,11 @@ p {
   height: 30px;
 }
 
-.about {
-  padding-bottom: 20px;
+.who-we-are,
+.what-we-do,
+.officers,
+.projects-showcase {
+  color: $dark-text;
 
   h2 {
     font-size: 35px;
@@ -338,14 +341,17 @@ p {
   li {
     font-size: 20px;
   }
+}
+
+.projects-showcase {
+  padding-bottom: 20px;
 
   .showcase-column {
-    @include span-columns(6);
-    @include omega(2n);
+    width: 100%;
+  }
 
-    img {
-      max-width: 100%;
-    }
+  img {
+    width: 100%;
   }
 }
 
