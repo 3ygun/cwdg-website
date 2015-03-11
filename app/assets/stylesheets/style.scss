@@ -355,13 +355,27 @@ p {
   }
 }
 
-.officers .officer-panel {
-  width: 20%;
-  float: left;
-  padding: 5px;
+.officers {
+  @include span-columns(12);
 
-  img {
-    width: 100%;
+  .officer-panel {
+    @include span-columns(2.4);
+    float: left;
+
+    @include media($tablet) {
+      // For some reason now 8 coluns wide?
+      @include span-columns(4);
+      @include omega(2n);
+    }
+
+    @include media($mobile) {
+      // For some reason now 4 columns wide?
+      @include span-columns(4);
+    }
+
+    img {
+      width: 100%;
+    }
   }
 }
 
