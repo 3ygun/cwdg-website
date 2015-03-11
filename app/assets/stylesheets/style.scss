@@ -285,7 +285,8 @@ p {
       @include shift(3);
       li {
         list-style-type: none;
-        @include span-columns(3 of 6);
+        // @include span-columns(3 of 6);
+        @include span-columns(6 of 6);
         @include omega(2n);
         @include media($mobile) {
           @include span-columns(6 of 6);
