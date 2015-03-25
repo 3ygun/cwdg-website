@@ -29,7 +29,7 @@ header {
   background-size: cover;
   background-position: 50% 50%;
   max-height: 350px;
-  padding-bottom: 8%;
+  padding-bottom: 50px;
   margin-bottom: 20px;
 
   h1 {
@@ -40,6 +40,10 @@ header {
 
 header#tutorials-header, header#projects-header {
   padding-bottom: 0px;
+}
+
+header#main-header {
+  padding-bottom: 8%;
 }
 
 footer {
@@ -285,7 +289,8 @@ p {
       @include shift(3);
       li {
         list-style-type: none;
-        @include span-columns(3 of 6);
+        // @include span-columns(3 of 6);
+        @include span-columns(6 of 6);
         @include omega(2n);
         @include media($mobile) {
           @include span-columns(6 of 6);
@@ -338,3 +343,67 @@ p {
 .logo {
   height: 30px;
 }
+
+.who-we-are,
+.what-we-do,
+.officers,
+.projects-showcase {
+  color: $dark-text;
+
+  h2 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p, h2 {
+    color: $dark-text;
+  }
+
+  li {
+    font-size: 20px;
+  }
+}
+
+.projects-showcase {
+  padding-bottom: 20px;
+
+  .showcase-column {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.officers {
+  @include span-columns(12);
+
+  .officer-panel {
+    @include span-columns(2.4);
+    float: left;
+
+    @include media($tablet) {
+      // For some reason now 8 coluns wide?
+      @include span-columns(4);
+      @include omega(2n);
+    }
+
+    @include media($mobile) {
+      // For some reason now 4 columns wide?
+      @include span-columns(4);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.clearfix {
+  clear: both;
+}
+
