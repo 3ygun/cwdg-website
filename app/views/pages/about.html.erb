@@ -1,0 +1,71 @@
+<%= content_tag :header, id: 'about-header', style: "background: #{geo_pattern_image('about us', {color: '#7A3332'})}" do %>
+  <%= render 'layouts/user_auth_navbar' %>
+  <div class="container">
+    <div class="introduction">
+      <h1>About Us</h1>
+    </div>
+  </div>
+<% end %>
+
+<section class="who-we-are">
+  <div class="container">
+    <h2>Who We Are</h2>
+    <p>CWDG is a passionate group of web developers based at The Ohio State
+    University. Members of the group are students, graduates, and alumni. Our
+    goal is to improve the web, and improve our own abilities.</p>
+  </div>
+</section>
+
+<section class="what-we-do">
+  <div class="container">
+    <h2>What We Do</h2>
+    <p>Since Autumn Semester, 2014, the Collegiate Web's largest focus is
+    building websites for other student organizations. Many student orgs at OSU
+    lack the talent or time necessary to create a website that fits their
+    needs. Furthermore, the developers in our club need project with which to
+    hone their skills.</p>
+  </div>
+</section>
+
+<section class="officers">
+  <div class="container">
+    <h2>Officers</h2>
+    <!-- TODO: Pictures, general overhault -->
+    <div class="officers">
+      <div class="officer-panel">
+        <h3>President:<br/>Jonathan Arnett</h3>
+        <%= image_tag 'officers/jonathan_arnett.jpg' %>
+      </div>
+      <div class="officer-panel">
+        <h3>Vice President:<br/>Eli Gladman</h3>
+        <%= image_tag 'officers/eli_gladman.jpg' %>
+      </div>
+      <div class="officer-panel">
+        <h3>Treasurer:<br/>Emma Rastatter</h3>
+        <%= image_tag 'officers/emma_rastatter.jpg' %>
+      </div>
+      <div class="officer-panel">
+        <h3>Secretary:<br/>Joseph Warner</h3>
+        <%= image_tag 'officers/joseph_warner.jpg' %>
+      </div>
+      <div class="officer-panel">
+        <h3>Webmaster:<br/>Tyler Pedelose</h3>
+        <%= image_tag 'officers/tyler_pedelose.jpg' %>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="clearfix"></div>
+
+<section class="projects-showcase">
+  <div class="container">
+    <h2>Projects Showcase</h2>
+    <!-- TODO: As before, general betterness -->
+    <div class="showcase-column">
+      <h3>Electronics Club</h3>
+      <a href="http://electronicsosu.github.io">
+        <%= image_tag 'electronics_club.png' %>
+      </a>
+    </div>
+  </div>
+</section>

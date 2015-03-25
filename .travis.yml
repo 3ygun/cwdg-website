@@ -16,6 +16,8 @@ before_script:
 notifications:
   email:
   - cwdgosu@gmail.com
+  slack:
+    secure: s40BSx9nWnF2HOsFGNeRthmacN0U/s9xQOJYUjUIoVrYG50/0KZFPGzYYaXtwbEAE2nn9omTO6WT+tXk4C62kUuHjpxckhpeAMptj4lcCgqrnVHczuA1vBvkQnt3hioWg0YgpFs5lF47S7aArZSaOJ0YgnYbnRfp9slihEyUPpQ=
 deploy:
   provider: heroku
   api_key:
