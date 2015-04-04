@@ -117,3 +117,14 @@ header {
     margin-bottom: 20px;
   }
 }
+
+.info-column,
+#getting-started,
+.about-text,
+.officer-blocks,
+.projects-showcase {
+  @include media($mobile) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

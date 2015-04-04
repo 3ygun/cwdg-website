@@ -327,14 +327,14 @@ p {
   height: 30px;
 }
 
-.who-we-are,
-.what-we-do,
+.about-text,
 .officers,
 .projects-showcase {
   color: $dark-text;
 
   h2 {
     font-size: 35px;
+    text-align: center;
   }
 
   h3 {
@@ -370,7 +370,7 @@ p {
     float: left;
 
     @include media($tablet) {
-      // For some reason now 8 coluns wide?
+      // For some reason now 8 columns wide?
       @include span-columns(4);
       @include omega(2n);
     }
