@@ -35,6 +35,16 @@ namespace :tutorials do
                      content:   get_tutorial_content(file_name),
                      sha:       sha,
                      title:     title).save
+
+        puts "Tweeting post..."
+        client = Twitter::REST::Client.new do |config|
+          config.consumer_key =         ENV["TWITTER_CONSUMER_KEY"]
+          config.consumer_secret =      ENV["TWITTER_CONSUMER_SECRET"]
+          config.access_token =         ENV["TWITTER_ACCESS_TOKEN"]
+          config.access_token_secret =  ENV["TWITTER_ACCESS_TOKEN_SECRET"]
+        end
+        client.update("New blog post: #{title}")
+
         puts "Done!"
       elsif tutorial.sha != file[:sha]
         puts "Updating #{title}..."

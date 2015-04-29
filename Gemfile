@@ -35,6 +35,8 @@ gem 'turbolinks', '~> 2.4.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn',  '~> 4.8.3'
 
+gem 'twitter', '~> 5.14.0'
+
 group :development, :test do
   gem 'awesome_print',     '~> 1.2.0'
   gem 'pry-rails',         '~> 0.3.2'
