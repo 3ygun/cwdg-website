@@ -31,10 +31,10 @@ namespace :tutorials do
 
       if tutorial.nil?
         puts "Creating #{title}..."
-        Tutorial.new(file_name: file_name,
-                     content:   get_tutorial_content(file_name),
-                     sha:       sha,
-                     title:     title).save
+        tutorial = Tutorial.create!(file_name: file_name,
+                                    content:   get_tutorial_content(file_name),
+                                    sha:       sha,
+                                    title:     title)
 
         puts "Tweeting post..."
         client = Twitter::REST::Client.new do |config|
@@ -45,8 +45,8 @@ namespace :tutorials do
         end
         # Trim title if it's too long to fit in a tweet
         title = title[0, 97] + '...' if title.size > 100
-
-        client.update("New blog post: #{title}")
+        link = "#{ENV['HOSTNAME']}/blog/#{tutorial.id}"
+        client.update("New blog post! #{title} #{link}")
 
         puts "Done!"
       elsif tutorial.sha != file[:sha]
