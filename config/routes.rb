@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :tutorials, only: [:index, :show]
+  resources :tutorials, only: [:index, :show], path: "blog"
   resources :users, only: [:show]
 
   root 'pages#home'
