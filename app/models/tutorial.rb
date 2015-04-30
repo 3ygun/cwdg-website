@@ -4,7 +4,7 @@ class Tutorial < ActiveRecord::Base
   validates :file_name, :content, :sha, :title, presence: true
 
   def self.sync
-    github_tutorials = Octokit.contents('CWDG/tutorials').keep_if do |file|
+    github_tutorials = Octokit.contents('CWDG/blog').keep_if do |file|
       !file[:name].eql?('README.md') && file[:name] =~ /\.md/
     end
 
