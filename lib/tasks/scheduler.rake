@@ -9,9 +9,9 @@ namespace :tutorials do
     puts "Done!"
   end
 
-  desc 'Sync with CWDG/tutorials'
+  desc 'Sync with CWDG/blog'
   task sync: :environment do
-    github_tutorials = Octokit.contents('CWDG/tutorials').keep_if do |file|
+    github_tutorials = Octokit.contents('CWDG/blog').keep_if do |file|
       !file[:name].eql?('README.md') && file[:name] =~ /\.md/
     end
 
