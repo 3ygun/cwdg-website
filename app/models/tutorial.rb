@@ -11,9 +11,7 @@ class Tutorial < ActiveRecord::Base
     # Remove tutorials no longer in the repo
     to_remove = (Tutorial.all.pluck(:file_name) - github_tutorials.map { |t| t[:name] })
     to_remove.each do |file_name|
-      puts "Removing #{file_name}..."
       Tutorial.find_by(file_name: file_name).destroy
-      puts "Done!"
     end
 
     # Create or Update Tutorial(s)
@@ -25,20 +23,14 @@ class Tutorial < ActiveRecord::Base
       download_url  = file[:download_url]
 
       if tutorial.nil?
-        puts "Creating #{title}..."
         tutorial = Tutorial.create!(file_name: file_name,
                                     content:   get_tutorial_content(download_url),
                                     sha:       sha,
                                     title:     title)
 
-        puts "Tweeting post..."
         tutorial.tweet
-
-        puts "Done!"
       elsif tutorial.sha != file[:sha]
-        puts "Updating #{title}..."
         tutorial.update_attribute(:content, get_tutorial_content(download_url))
-        puts "Done!"
       end
     end
   end
