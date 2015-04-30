@@ -55,7 +55,7 @@ class Tutorial < ActiveRecord::Base
       title = self.title
     end
 
-    link = "#{ENV['HOSTNAME']}/blog/#{tutorial.id}"
+    link = "#{ENV['HOSTNAME']}/blog/#{self.id}"
     client.update("New blog post! #{title} #{link}")
   end
 end
