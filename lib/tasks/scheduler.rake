@@ -43,6 +43,9 @@ namespace :tutorials do
           config.access_token =         ENV["TWITTER_ACCESS_TOKEN"]
           config.access_token_secret =  ENV["TWITTER_ACCESS_TOKEN_SECRET"]
         end
+        # Trim title if it's too long to fit in a tweet
+        title = title[0, 97] + '...' if title.size > 100
+
         client.update("New blog post: #{title}")
 
         puts "Done!"
