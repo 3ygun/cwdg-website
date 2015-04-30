@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :tutorials, only: [:index, :show], path: "blog" do
     collection do
       post 'event_handler'
     end
   end
+=======
+  resources :tutorials, only: [:index, :show], path: "blog"
+>>>>>>> master
   resources :users, only: [:show]
 
   root 'pages#home'
