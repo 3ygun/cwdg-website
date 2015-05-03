@@ -10,9 +10,6 @@
 # Ignore bundler config.
 /.bundle
 
-# Secrets.yml
-config/secrets.yml
-
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -32,3 +29,6 @@ config/database.yml
 
 # Vim swap files
 *.swp
+
+# ENV variables
+.env
