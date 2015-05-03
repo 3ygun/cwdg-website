@@ -16,7 +16,8 @@ gem 'html-pipeline', '~> 1.11.0'
 gem 'jbuilder',     '~> 2.0'
 gem 'jquery-rails'
 
-gem 'pg', '~> 0.17.1'
+gem 'pg',   '~> 0.17.1'
+gem 'puma', '~> 2.11.2'
 
 gem 'neat', '~> 1.6.0'
 
@@ -33,7 +34,6 @@ gem 'sdoc',       '~> 0.4.0', group: :doc
 gem 'turbolinks', '~> 2.4.0'
 
 gem 'uglifier', '>= 1.3.0'
-gem 'unicorn',  '~> 4.8.3'
 
 group :development, :test do
   gem 'awesome_print',     '~> 1.2.0'
