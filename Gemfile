@@ -37,10 +37,11 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'awesome_print',     '~> 1.2.0'
+  gem 'dotenv-rails',      '~> 2.0.1'
   gem 'pry-rails',         '~> 0.3.2'
   gem 'spring',            '~> 1.1.3'
   gem 'quiet_assets',      '~> 1.0.3'
-  gem 'web-console',       '~> 2.0'
+  gem 'web-console',       '~>   2.0'
 end
 
 group :test do

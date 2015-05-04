@@ -11,7 +11,6 @@ before_install:
 - gem install charlock_holmes -v="0.7.3"
 before_script:
 - cp config/database.travis.yml config/database.yml
-- cp config/secrets-example.yml config/secrets.yml
 - psql -c 'create database cwdg_test;' -U postgres
 notifications:
   email:
