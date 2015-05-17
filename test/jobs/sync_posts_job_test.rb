@@ -44,4 +44,14 @@ class SyncPostsJobTest < ActiveJob::TestCase
 
     assert_equal "# Git Tutorial", Tutorial.first.content
   end
+
+  test "syncing deletes posts" do
+    Tutorial.create!({file_name: "hello-world.rb", title: "Hello World",
+                      sha: "5678", content: "# Hello World!"})
+
+    SyncPostsJob.perform_now
+
+    assert_equal 1, Tutorial.count
+    assert_equal "Git Tutorial", Tutorial.first.title
+  end
 end
