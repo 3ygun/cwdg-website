@@ -37,6 +37,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'twitter', '~> 5.14.0'
 
+gem 'delayed_job_active_record', '~> 4.0.3'
+
 group :development, :test do
   gem 'awesome_print',     '~> 1.2.0'
   gem 'dotenv-rails',      '~> 2.0.1'
