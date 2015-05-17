@@ -42,6 +42,6 @@ class SyncPostsJobTest < ActiveJob::TestCase
 
     SyncPostsJob.perform_now
 
-    assert_equal "Git Tutorial", Tutorial.first.title
+    assert_equal "# Git Tutorial", Tutorial.first.content
   end
 end
