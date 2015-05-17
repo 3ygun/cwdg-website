@@ -26,7 +26,7 @@ class SyncPostsJob < ActiveJob::Base
                                     sha:       sha,
                                     title:     title)
 
-        tweet(tutorial)
+        tweet_post(tutorial)
       elsif tutorial.sha != file[:sha]
         tutorial.update_attribute(:content, get_tutorial_content(download_url))
       end
