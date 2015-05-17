@@ -15,7 +15,7 @@ class TutorialsController < ApplicationController
       pull_request["state"] == "closed" &&
       pull_request["merged"] == true)
 
-      Tutorial.sync
+      SyncPostsJob.perform_later
     end
 
     render nothing: true
