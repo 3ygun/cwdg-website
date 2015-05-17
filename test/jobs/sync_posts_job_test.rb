@@ -26,7 +26,7 @@ class SyncPostsJobTest < ActiveJob::TestCase
 
     # Twitter mocks
     stub_request(:post, "https://api.twitter.com/1.1/statuses/update.json").
-      to_return(status: 200, body: "{'id': 1234567890}")
+      to_return(status: 200, body: "{\"id\": 1234567890}")
   end
 
   test "syncing adds post" do
