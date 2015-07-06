@@ -25,6 +25,8 @@ class SyncPostsJobTest < ActiveJob::TestCase
       to_return(status: 200, body: "# Git Tutorial")
 
     # Twitter mocks
+    stub_request(:post, "https://api.twitter.com/oauth2/token").
+      to_return(status: 200, body: "", headers: {})
     stub_request(:post, "https://api.twitter.com/1.1/statuses/update.json").
       to_return(status: 200, body: "{\"id\": 1234567890}")
   end
