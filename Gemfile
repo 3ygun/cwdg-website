@@ -35,6 +35,10 @@ gem 'turbolinks', '~> 2.4.0'
 
 gem 'uglifier', '>= 1.3.0'
 
+gem 'twitter', '~> 5.14.0'
+
+gem 'delayed_job_active_record', '~> 4.0.3'
+
 group :development, :test do
   gem 'awesome_print',     '~> 1.2.0'
   gem 'dotenv-rails',      '~> 2.0.1'
@@ -47,6 +51,7 @@ end
 group :test do
   gem 'minitest-reporters', '~> 1.0.5'
   gem 'mini_backtrace',     '~> 0.1.3'
+  gem 'webmock', '~> 1.21.0'
 end
 
 group :production do
