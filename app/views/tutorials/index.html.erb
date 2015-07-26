@@ -4,7 +4,7 @@
     <% @tutorials.each do |tutorial| %>
       <li>
         <span class="tutorial-title">
-          <%= link_to "https://github.com/CWDG/tutorials/edit/master/#{tutorial.file_name}", method: 'post' do %>
+          <%= link_to "https://github.com/CWDG/blog/edit/master/#{tutorial.file_name}" do %>
             <%= mega_octicon('pencil') %>
           <% end %>
           <%= link_to tutorial.title, tutorial_path(tutorial) %>
