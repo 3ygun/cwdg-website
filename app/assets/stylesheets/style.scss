@@ -115,8 +115,6 @@ p {
   @include span-columns(4);
   @include omega(3n);
 
-  text-align: justify;
-
   .mega-octicon {
     margin-left: 45%;
   }
@@ -330,8 +328,6 @@ p {
 .about-text,
 .officers,
 .projects-showcase {
-  color: $dark-text;
-
   h2 {
     font-size: 35px;
     text-align: center;
@@ -341,12 +337,23 @@ p {
     font-size: 20px;
   }
 
+  li {
+    font-size: 20px;
+  }
+}
+
+.officers,
+.projects-showcase {
+  color: $dark-text;
+
   p, h2 {
     color: $dark-text;
   }
+}
 
-  li {
-    font-size: 20px;
+.about-text {
+  .who-we-are, .what-we-do {
+    @include span-columns(6);
   }
 }
 
