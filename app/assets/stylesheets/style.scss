@@ -328,6 +328,9 @@ p {
 .about-text,
 .officers,
 .projects-showcase {
+  padding-top: 0;
+  padding-bottom: 20px;
+
   h2 {
     font-size: 35px;
     text-align: center;
@@ -358,8 +361,6 @@ p {
 }
 
 .projects-showcase {
-  padding-bottom: 20px;
-
   .showcase-column {
     width: 100%;
   }
@@ -395,4 +396,5 @@ p {
 
 .clearfix {
   clear: both;
+  padding: 0;
 }
