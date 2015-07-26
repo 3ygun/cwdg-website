@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :tutorials, only: [:index, :show], path: "blog"
+  resources :tutorials, only: [:index, :show], path: "blog" do
+    collection do
+      post 'event_handler'
+    end
+  end
   resources :users, only: [:show]
 
   root 'pages#home'
