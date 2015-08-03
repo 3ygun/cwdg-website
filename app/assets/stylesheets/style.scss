@@ -115,8 +115,6 @@ p {
   @include span-columns(4);
   @include omega(3n);
 
-  text-align: justify;
-
   .mega-octicon {
     margin-left: 45%;
   }
@@ -330,7 +328,8 @@ p {
 .about-text,
 .officers,
 .projects-showcase {
-  color: $dark-text;
+  padding-top: 0;
+  padding-bottom: 20px;
 
   h2 {
     font-size: 35px;
@@ -341,18 +340,27 @@ p {
     font-size: 20px;
   }
 
-  p, h2 {
-    color: $dark-text;
-  }
-
   li {
     font-size: 20px;
   }
 }
 
+.officers,
 .projects-showcase {
-  padding-bottom: 20px;
+  color: $dark-text;
 
+  p, h2 {
+    color: $dark-text;
+  }
+}
+
+.about-text {
+  .who-we-are, .what-we-do {
+    @include span-columns(6);
+  }
+}
+
+.projects-showcase {
   .showcase-column {
     width: 100%;
   }
@@ -388,4 +396,5 @@ p {
 
 .clearfix {
   clear: both;
+  padding: 0;
 }

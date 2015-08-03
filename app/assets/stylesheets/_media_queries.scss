@@ -55,6 +55,7 @@ header {
 .info-column {
   @include media($mobile) {
     width: 100%;
+    text-align: justify;
   }
   @include media($tablet) {
     width: 100%;
@@ -126,5 +127,19 @@ header {
   @include media($mobile) {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  @include media($tablet) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.about-text {
+  .who-we-are, .what-we-do {
+    @include media($tablet) {
+      @include span-columns(8);
+      text-align: justify;
+    }
   }
 }
